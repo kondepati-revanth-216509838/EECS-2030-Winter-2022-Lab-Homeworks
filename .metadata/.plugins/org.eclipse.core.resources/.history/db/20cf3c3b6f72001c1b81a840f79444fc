@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class LoginCredentials {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String login = "nigger666";
+		String password = "fuckniggaz999";
+		
+		System.out.print("Login:"); 
+		input.nextLine();
+		String givenLogin = input.nextLine();
+		System.out.println();// End writing in this line and go to the next line.
+		System.out.print("Password:"); 
+		input.nextLine();
+		String givenPassword = input.nextLine();
+		System.out.println();// End writing in this line and go to the next line.
+		
+		if (login.equals(givenLogin) && password.equals(givenPassword)) {
+			System.out.println("Welcome!");
+		}
+	}
+
+}
