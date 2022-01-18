@@ -1,0 +1,12 @@
+package Lab1;
+
+public class Lab {
+
+	public static String getMyID() {
+		return "";
+	}
+	
+	public static String getLetterGrade(double grade) {
+		
+	}
+}
