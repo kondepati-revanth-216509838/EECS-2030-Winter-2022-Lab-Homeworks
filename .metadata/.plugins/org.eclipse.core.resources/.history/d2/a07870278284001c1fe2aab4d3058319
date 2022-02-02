@@ -189,9 +189,9 @@ public class Vector3D {
      */
     public boolean equalTo(Vector3D other, double threshold) {
     	// your code goes here. You may want to change the return value.
-    	boolean equalX = Math.abs(this.x - other.x) <= threshold;
-    	boolean equalY = Math.abs(this.y - other.y) <= threshold;
-    	boolean equalZ = Math.abs(this.z - other.z) <= threshold;
+    	boolean equalX = other.x == this.y;
+    	boolean equalY = other.y == this.y;
+    	boolean equalZ = other.y == this.y;
     	return equalX && equalY && equalZ;
     }
     	
