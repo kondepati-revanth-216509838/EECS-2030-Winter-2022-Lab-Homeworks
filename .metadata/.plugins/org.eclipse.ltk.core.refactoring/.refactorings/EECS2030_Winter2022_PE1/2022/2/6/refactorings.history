@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MinDominantSetTest.java&apos; to &apos;EECS2030_Lab4/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;EECS2030_Winter2022_PE1&apos;&#x0D;&#x0A;- Destination element: &apos;EECS2030_Lab4/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;PE1.MinDominantSetTest.java&apos;" description="Copy compilation unit" destination="=EECS2030_Lab4/src&lt;" element1="/src&lt;PE1{MinDominantSetTest.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1644007609540" units="1" version="1.0"/>
+</session>
