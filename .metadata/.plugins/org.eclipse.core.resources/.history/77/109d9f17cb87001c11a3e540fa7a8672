@@ -1,15 +1,9 @@
 package Lab3;
-
-
-/**
- * This class defines a 3D vector
- * @author EECS2030 
- *
- */
+import java.math.*;
 public class Vector3D {
 	// define instance variables here 
-
-	private double x,y,z;
+	private double x, y, z;
+	
 	/**
      * Creates the vector <code>(0.0, 0.0, 0.0)</code>.
      * This is the default constructor.
@@ -41,9 +35,9 @@ public class Vector3D {
      * @param other  is a vector used to copy the components from
      */
     public Vector3D(Vector3D other) {
-    	this.x = other.getX();
-    	this.y = other.getY();
-    	this.z = other.getZ();
+    	this.x = other.x;
+    	this.y = other.y;
+    	this.z = other.z;
     }
     
     
@@ -52,7 +46,7 @@ public class Vector3D {
      * @return the x component of the vector.
      */
     public double getX() {
-    	return this.x;
+    	return x;
     }
     
     
@@ -65,13 +59,12 @@ public class Vector3D {
     }
     
     
-    
     /**
      * Returns the y component of the vector.
      * @return the y component of the vector.
      */
     public double getY() {
-    	return this.y;
+    	return y;
     }
     
     
@@ -91,7 +84,7 @@ public class Vector3D {
      * @return the z component of the vector.
      */
     public double getZ() {
-    	return this.z;
+    	return z;
     }
     
     
@@ -103,7 +96,6 @@ public class Vector3D {
     public void setZ(double z) {
     	this.z = z;
     }
- 
     
 
  
@@ -116,7 +108,10 @@ public class Vector3D {
      */
     public Vector3D add(Vector3D other) {
     	// your code goes here. You may want to change the return value.
-    	return new Vector3D(this.x + other.getX(),this.y + other.getY(),this.z + other.getZ());
+    	x += other.x;
+    	y += other.y;
+    	z += other.z;
+    	return this;
     }
 
 
@@ -128,7 +123,10 @@ public class Vector3D {
      */
     public Vector3D subtract(Vector3D other) {
     	// your code goes here. You may want to change the return value.
-    	return new Vector3D(this.x - other.getX(),this.y - other.getY(),this.z - other.getZ());
+    	x -= other.x;
+    	y -= other.y;
+    	z -= other.z;
+    	return this;
     }
     /**
      * Multiplies this vector by a scalar.
@@ -137,7 +135,10 @@ public class Vector3D {
      */
     public Vector3D scalarMultiplication(double scalar) {
     	// your code goes here. You may want to change the return value.
-    	return new Vector3D(scalar * this.x, scalar * this.y, scalar * this.z);
+    	x *= scalar;
+    	y *= scalar;
+    	z *= scalar;
+    	return this;
    }
 
     /**
@@ -147,10 +148,11 @@ public class Vector3D {
      */
     public  double dotProduct(Vector3D other) {        
     	// your code goes here. You may want to change the return value.
-    	double xComponent = other.getX() * this.x;
-    	double yComponent = other.getY() * this.y;
-    	double zComponent = other.getZ() * this.z;
-    	return xComponent + yComponent + zComponent;
+    	double dotX = x * other.x;
+    	double dotY = y * other.y;
+    	double dotZ = z * other.z;
+    	double finalproduct = dotX + dotY + dotZ;
+    	return finalproduct;
     }
     
 
@@ -160,11 +162,8 @@ public class Vector3D {
      */
     public double magnitude() {
     	// your code goes here. You may want to change the return value.
-    	double magX = this.x * this.x;
-    	double magY = this.y * this.y;
-    	double magZ = this.z * this.z;
-    	
-    	return Math.sqrt(magX + magY + magZ);
+    	double mag = Math.sqrt((x * this.x) + (y * this.y) + (z * this.z));
+    	return mag;
     }
 
     /**
@@ -175,7 +174,8 @@ public class Vector3D {
     @Override
     public String toString() {
     	// your code goes here. You may want to change the return value.
-    	return "[" + this.x + ", " + this.y + ", " + this.z + "]";
+    	String str = "[" + this.x + "," + this.y + "," + this.z + "]";
+    	return str;
     	
      }
 
@@ -189,10 +189,6 @@ public class Vector3D {
      */
     public boolean equalTo(Vector3D other, double threshold) {
     	// your code goes here. You may want to change the return value.
-    	boolean equalX = Math.abs(this.x - other.getX()) < threshold;
-    	boolean equalY = Math.abs(this.y - other.getY()) < threshold;
-    	boolean equalZ = Math.abs(this.z - other.getZ()) < threshold;
-    	return equalX && equalY && equalZ;
+    	return Math.abs(magnitude() - other.magnitude()) < threshold;
     }
-    	
 }
